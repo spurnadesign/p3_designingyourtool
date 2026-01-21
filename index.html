@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Cover Generator - Portada y Contraportada</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="libraries/p5.min.js"></script>
+</head>
+<body>
+  <div id="topBar">
+    <h1>Genera tu bookcover</h1>
+    <button class="export-btn" onclick="saveCoverPNG('front')">Portada PNG</button>
+    <button class="export-btn" onclick="saveCoverJPG('front')">Portada JPG</button>
+    <button class="export-btn" onclick="saveCoverPNG('back')">Contraportada PNG</button>
+    <button class="export-btn" onclick="saveCoverJPG('back')">Contraportada JPG</button>
+  </div>
+
+  <div id="layout">
+    <div id="sideBar">
+      <!-- Portada -->
+      <label>Cambia tu frase</label>
+      <textarea id="fraseDisplayFront" readonly></textarea>
+      <button onclick="nextTextFront()">Cambiar frase</button>
+      <hr>
+      <label>Fondo portada</label>
+      <input type="range" id="sliderFront" min="0" max="5" value="0">
+      <label>Tamaño texto portada</label>
+      <input type="range" id="sizeSliderFront" min="50" max="200" value="48">
+      <button onclick="nextOjosFront()">Cambiar ojos</button>
+      <button onclick="nextMouthFront()">Cambiar boca</button>
+
+      <hr>
+
+      <!-- Contraportada -->
+      <label>Frase contraportada </label>
+      <textarea id="fraseDisplayBack" readonly></textarea>
+      <button onclick="nextTextBack()">Cambiar frase</button>
+      <hr>
+      <label>Fondo contraportada</label>
+      <input type="range" id="sliderBack" min="0" max="5" value="0">
+      <label>Tamaño texto contraportada</label>
+      <input type="range" id="sizeSliderBack" min="20" max="100" value="32">
+      <button onclick="nextOjosBack()">Cambiar ojos</button>
+      <button onclick="nextMouthBack()">Cambiar boca</button>
+    </div>
+
+    <div id="canvasWrapper">
+      <div class="canvasContainer">
+        <h2>Contraportada</h2>
+        <div id="canvasBackWrapper"></div>
+      </div>
+      <div class="canvasContainer">
+        <h2>Portada</h2>
+        <div id="canvasFrontWrapper"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="sketch.js"></script>
+</body>
+</html>

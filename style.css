@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'SuisseIntlCond-Medium';
+  src: url("TIPO/SuisseIntlCond-Medium.otf");
+}
+@font-face {
+  font-family: 'SuisseIntlCond-Regular';
+  src: url("TIPO/SuisseIntlCond-Regular.otf");
+}
+
+body {
+  font-family: 'SuisseIntlCond-Regular', sans-serif;
+  background: #eaeaea;
+}
+
+#topBar {
+  height: 120px;
+  background: #111;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+#topBar h1 {
+  flex: 1;
+  font-size: 40px;
+  text-align: left;
+  font-family: 'SuisseIntlCond-Medium', sans-serif;
+}
+
+/* Botones de exportar (top bar) */
+.export-btn {
+  width: 12em;
+  height: 40px;
+  margin-right: 1em;
+  background-color: #fce38a;
+  color: #111;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'SuisseIntlCond-Medium', sans-serif;
+}
+
+.export-btn:hover {
+  background-color: #ffe87a;
+}
+
+/* LAYOUT */
+#layout {
+  display: flex;
+  height: calc(100vh - 120px);
+}
+
+/* BARRA LATERAL */
+#sideBar {
+  width: 270px;
+  background: #F6E788;
+  padding: 1em;
+}
+
+label {
+  display: block;
+  margin-top: 2em;
+  font-size: 18px;
+  font-family: 'SuisseIntlCond-Medium', sans-serif;
+}
+
+textarea {
+  width: 100%;
+  height: 30px;
+  margin-top: 0.5em;
+  padding: 0.5em;
+  resize: none;
+  font-family: 'SuisseIntlCond-Regular', sans-serif;
+  text-align: center;
+  background: #eee;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* -------------------------------------------------------------------
+   BOTONES “CAMBIAR” EN LA BARRA LATERAL
+   Aquí puedes hacerlos más anchos cambiando width
+-------------------------------------------------------------------- */
+#sideBar button {
+  width: 90%;       /* <-- Cambia aquí el ancho, antes estaba 80% */
+  height: 25px;     /* <-- Altura de los botones */
+  margin-top: 0.5em;/* <-- Espacio entre botones */
+  border: none;
+  outline: none;
+  box-shadow: none;
+  font-family: 'SuisseIntlCond-Medium', sans-serif;
+}
+/* ------------------------------------------------------------------- */
+
+/* OCULTAR HR de separación que causa la línea negra */
+#sideBar hr {
+  border: none;
+  height: 0;
+  margin: 0.5em 0;
+  padding: 0;
+}
+
+/* CANVAS */
+#canvasWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1em;
+  gap: 10px;
+}
+
+.canvasContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.canvasContainer h2 {
+  margin-bottom: 10px;
+  font-family: 'SuisseIntlCond-Medium', sans-serif;
+}
+
+canvas {
+  border: 0.5px solid black;
+}
